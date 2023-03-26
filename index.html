@@ -1,0 +1,417 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>Anasayfa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <script src="js/gerisayim.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/session.js"></script>
+</head>
+<body>
+    <div class="modal fade" id="fgModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">KADİR HAS ÜNİVERSİTESİ 2023 ERASMUS ALANI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <b>İlan Başlangıç Tarihi:</b> 05.01.2023 09:00
+                        <b>İlan Bitiş Tarihi:</b> 01.06.2023 17:00
+                        <b>Başvuru Başlangıç Tarihi:</b> 05.01.2023 09:00 <br /><br />
+                        <b>BAşVURU SüRECi :</b> <br />
+                        Seçim sonuçları açıklandıktan sonra seçilen adaylar 31/07/2024 tarihine kadar hareketliliklerini tamamlamış ve dönmüş olmalıdır. 05 Ocak 2023 tarihli ilanının tahmini toplam 10 kişilik alımı yapılacaktır.<br /><br />
+
+                        Öğrenciler tercih yaparken “Program Ülkeleri”, “Ortak Ülkeler”, “AB üyesi olmayan program ülkeleri” ne ait üniversitelerden yararlanabileceklerdir. 
+                        <br />
+                                AB üyesi ülkeler
+                        <br />
+                                Programla İlişkili Olmayan Ülkeler
+                        <br />
+                               AB üyesi olmayan program ülkeleri (Norveç, İzlanda, Lihtenştayn, Kuzey Makedonya, Sırbistan)<br />
+                        <br />
+
+                        <b>BAŞVURU BELGELERİ</b> <br />
+
+                        <b>1.</b> İngilizce Yeterlilik Belgesi<br />
+
+                        -         Başvuru formunda istenen Erasmus ingilizce Yeterlilik Sınav sonuç bilgisi henüz belli değil ise ilgili kısım boş bırakılabilir. Sınav sonucu olmayan adayların üniversitemiz Erasmus İngilizce Yeterlilik Sınavına girmeleri zorunludur.<br />
+
+                        <b>2.</b> Diploma / Güncel Transkript (Diploma/Current transcript)<br />
+
+                        Öğrenci İşleri Müdürlüğünden alınmış imzalı/mühürlü not dökümünüz veya E-devletten alınmış belge doğrulama kodu bulunan not dökümünüz/ transkriptiniz başvuru sistemine yüklenmelidir.<br />
+
+                        <b>3.</b> Niyet Mektubu (Letter of Intent)<br />
+
+                        Bu belgenin başvuru takviminde belirtilen tarih aralıklarında aday tarafından başvuru sistemine yüklenmesi gerekmektedir.<br />
+
+                        <b>4.</b> Pasaport (Passport)<br />
+                        <b>5.</b> İkametgah Belgesi (Certificate of residence)<br />
+                        <b>6.</b> Cv<br />
+                    </p>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-Primary" data-bs-dismiss="modal">Anladım.</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top navbarClass">
+            <div class="container-fluid">
+                <a href="index.html">
+                    <img class="siteLogo" src="images/khaslogo.png"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="yolharitasi.html">Erasmus Yol Haritası</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basvuruformu.html">Şimdi Başvur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html ">İletişim</a>
+                        </li>
+
+                    </ul>
+                    <div class="girisKayitCikis d-flex">
+                        <div class="d-flex" id="btndiv">
+                            <a href="giris.html" type="submit" style="margin-right: 5px;"><i class="fa-solid fa-right-to-bracket"></i> Giriş</a>
+                            <a href="kayit.html" type="submit"><i class="fa-solid fa-user-plus"></i> Kayıt</a>
+                        </div>
+                        <div class="d-flex" id="header_sag">
+
+                        </div>
+                        <a id="logout_btn" style="display:none" onclick="logOut()"><i class="fa-solid fa-circle-xmark"></i> Çıkış</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section class="anasayfaSliderMain">
+        <a href="#" class="sliderBlock">
+            <div class="sliderImg" style="background: url(images/homeSlide1.jpg) no-repeat center center;"></div>
+        </a>
+        <a href="#" class="sliderBlock">
+            <div class="sliderImg" style="background: url(images/homeSlide2.jpg) no-repeat center center;"></div>
+        </a>
+    </section>
+
+    <section class="anasayfaSonBasvuru">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Son Başvuru Tarihine Kalan Süre: <span id="demo"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="haberlerveDuyurularMain">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <h3>Haberler</h3>
+                    <div class="anasayfaHaberlerSlider">
+                        <div class="haberBlock">
+                            <div class="card">
+                                <img class="card-img-top" src="images/haber1.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Üniversitemize Yeni Bir ERASMUS+ Proje Desteği</h5>
+                                    <p class="card-text">Prof. Dr. Meltem Ucal’ın, “Good DEEDs – Digital Energy Efficiency Designers” başlıklı Erasmus+ Key Action 2 (KA226) projesi desteklenmeye hak kazandı.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haberBlock">
+                            <div class="card">
+                                <img class="card-img-top" src="images/haber2.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Erasmus Mundus Joint Masters'Dan KHAS’a Proje Desteği</h5>
+                                    <p class="card-text">Prof. Dr. Hasan Dağ‘ın “CyberMACS – Master of Applied Cybersecurity” başlıklı proje önerisi desteklenmeye hak kazanmıştır. </p>                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haberBlock">
+                            <div class="card">
+                                <img class="card-img-top" src="images/haber3.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Endüstriyel Tasarım Bölümümüz, Design Academy Eindhoven ile Erasmus Anlaşması İmzaladı</h5>
+                                    <p class="card-text">DAE ile Türkiye’de bu işbirliğini sağlayan ilk bölüm olan Kadir Has Üniversitesi Endüstriyel Tasarım Bölümü'nü tebrik ederiz. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haberBlock">
+                            <div class="card">
+                                <img class="card-img-top" src="images/haber4.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title">KHAS-YEP’in Sanayi Bakanlığı ve Avrupa Birliği Tarafından Desteklenen FabriKHAS Projesi Resmen Başladı.</h5>
+                                    <p class="card-text">Kurulacak merkezin ülkemizdeki ekran endüstrisine çığır açacak bir yenilik getirmesi planlanıyor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Duyurular</h3>
+                    <a href="#" class="duyuruBlock">
+                        <div class="tarih">
+                            <div class="gun">6</div>
+                            <div class="ay">Şubat</div>
+                        </div>
+                        <div class="baslik">
+                            Beyaz Güvercinler Burs Programımıza Başvurular Başladı.
+                        </div>
+                        <div class="temizle"></div>
+                    </a>
+                    <a href="#" class="duyuruBlock">
+                        <div class="tarih">
+                            <div class="gun">25</div>
+                            <div class="ay">Şubat</div>
+                        </div>
+                        <div class="baslik">
+                            Khas sponsorluğunda 100 Kadın Yazılımcı Yetişiyor.
+                        </div>
+                        <div class="temizle"></div>
+                    </a>
+                    <a href="#" class="duyuruBlock">
+                        <div class="tarih">
+                            <div class="gun">27</div>
+                            <div class="ay">Şubat</div>
+                        </div>
+                        <div class="baslik">
+                            DESIGNHUB-IST: Tasarımda Yapay Zeka Semineri
+                            Zoom 10:00-12:00
+                        </div>
+                        <div class="temizle"></div>
+                    </a>
+                    <a href="#" class="duyuruBlock">
+                        <div class="tarih">
+                            <div class="gun">8</div>
+                            <div class="ay">Mart</div>
+                        </div>
+                        <div class="baslik">
+                            Kadına Yönelik Şiddetle Mücadele
+                            D Blok Büyük Salon 11:45 - 13:45
+                        </div>
+                        <div class="temizle"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---->
+    <section class="anasayfaSagSolResimler">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="lh-1"><span class="text-muted">ERASMUS+</span></h2>
+                    <p class="lead">Erasmus+ Programı AB'nin eğitim, gençlik ve spor alanlarındaki hibe programıdır. 
+                        Yurt dışında eğitim, öğretim, staj, profesyonel gelişim, yaygın öğrenme temelli gençlik aktiviteleri ile kurumlar arasındaki işbirliklerini desteklemektedir. 
+                        Avrupa Dayanışma Programı (ESC) ise topluma yarar sağlayan projelerde gönüllülük, dayanışma ve ağ kurma faaliyetlerine imkan sağlar.</p>
+                    <p class="lead"><b>Yüksek öğretim Kurumlarının Dahil Olabileceği Alt Programlar</b></p>
+                    <p class="lead">
+                        <ul>
+                            <li>İşbirliği Ortaklıkları (Partnerships for Cooperation)</li>
+                            <li>Küçük ölçekli Ortaklıklar (Small-scale Partnerships)</li>
+                            <li>Yükseköğretim Alanında Jean Monnet Actions</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="images/erasmus+.png" class="img-fluid imgShadowClass" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7 order-md-2 centerDivBlock">
+                    <h2 class="lh-1"><span class="text-muted">YÜKSEKÖĞRETİM</span></h2>
+                    <p class="lead">
+                        Erasmus+ lisans ve lisansüstü öğrencilerine  eğitim ve staj imkanlarının yanı sıra akademik ve idari personele eğitim alma ve ders verme
+                        imkanları sunar. Bunun yanında Erasmus+, yükseköğretim kurumlarına stratejik ortaklık projelerine katılma imkanı sağlar.
+                    </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="images/album5.jpg" class="img-fluid imgShadowClass" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="lh-1"><span class="text-muted">GENÇLİK</span></h2>
+                    <p class="lead">
+                        Erasmus+ gençlerin gönüllülük ve değişim programları aracılığıyla yeni beceriler elde ederek onların ufuklarını genişletmeye
+                        yardımcı olacak birçok fırsta sunar. Bunun yanında Erasmus+ gençlik organizasyonlarına ve kurumlarına stratejik ortaklık projelerine katılım imkanı da sunmaktadır.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="images/album9.jpg" class="img-fluid imgShadowClass" />
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="anasayfaAkademisyenlerimiz">
+        <div class="container">
+            <div class="row">
+                <div class=" col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <p class="baslik"><b>AKADEMiSYENLERiMiZ</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/Sondan-feyiz.jpg" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">SONDAN FEYİZ</h4>
+                    <p>PROF. DR.<br />REKTÖR</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/ahmet-berker.jfif" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">AHMET BERKER</h4>
+                    <p>PROF. DR.<br />REKTÖR YARDIMCISI</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/Mitat-celikpala.png" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">MİTAT ÇELİKPALA</h4>
+                    <p>PROF. DR.<br />REKTÖR YARDIMCISI</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/hasan-dag.jpg" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">HASAN DAĞ</h4>
+                    <p>PROF. DR.<br />REKTÖR YARDIMCISI</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/marylouise.jpg" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">MARY LOUISE</h4>
+                    <p>PROF. DR.</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/olgunakbulut.jfif" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">OLGUN AKBULUT</h4>
+                    <p>DOÇ. DR.</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/banubaybars.jfif" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">BANU BAYBARS</h4>
+                    <p>PROF. DR.</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-6 text-center">
+                    <img src="images/meltemucal.jpg" class="img-fluid imgShadowClass" />
+                    <h4 class="fw-normal mt-3">MELTEM UCAL</h4>
+                    <p>PROF. DR.</p>
+                </div>            
+            </div>
+        </div>
+    </section>
+
+
+    <section class="footerMain">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <a href="index.html"><img src="images/logo_footer.png" class="img-fluid" /></a>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-location-dot"></i> Cibali Mah. Kadir Has Cad. 34083 Fatih / İSTANBUL
+                    </div>
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-at"></i> ar-ge@khas.edu.tr
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-phone"></i> +90 (212) 533 65 32
+                    </div>
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-fax"></i> +90 212 631 91 50
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://twitter.com/khas_arge" target="_blank" class="socialLink"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="http://linkedin.com/in/khas-ar-ge-404a98172" target="_blank" class="socialLink"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Khasedutr" target="_blank" class="socialLink"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/khasedutr/" target="_blank" class="socialLink"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/user/KadirHasUniversitesi" target="_blank" class="socialLink"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link" target="_blank" class="socialLink"><i class="fa-brands fa-spotify"></i></a>
+                    <div class="temizle"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyrightText">
+                        © 2023 - Sezgi Ersoy
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <script type="text/javascript">
+        /* sayfa yüklendiğinde fonkiyonu çalıştır.(pop-up*/
+        $(window).on('load', function () {
+            /*fonksiyon içinde, modal� görünür olacak şekilde ayarla*/
+            $('#fgModal').modal('show');
+            /*    Html taraf�nda ve burada verilen id'lerin aynı olmasına dikkat et*/
+        });
+    </script>
+    <script>
+
+        checkLogin();
+
+    </script>
+    <script>
+        $('.anasayfaSliderMain').slick({
+            dots: false,
+            infinite: true, //slayt bittiğinde başa dönsün- sonsuz döngü
+            autoplay: true, //slaydır otomatik kaysın
+            speed: 300, // dönüş hızı
+            slidesToShow: 1,     //bir akranda kaç slider göstersin    
+        });
+
+        $('.anasayfaHaberlerSlider').slick({
+            dots: false,
+            infinite: true,
+            autoplay: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+        });
+
+        //anasayfaHaberlerSlider
+    </script>
+</body>
+</html>

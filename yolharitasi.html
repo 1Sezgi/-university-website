@@ -1,0 +1,318 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>Erasmus Yol Haritası</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/session.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top navbarClass">
+            <div class="container-fluid">
+                <a href="index.html">
+                    <img class="siteLogo" src="images/khaslogo.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="yolharitasi.html">Erasmus Yol Haritası</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="basvuruformu.html">Şimdi Başvur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html ">İletişim</a>
+                        </li>
+
+                    </ul>
+                    <div class="girisKayitCikis d-flex">
+                        <div class="d-flex" id="btndiv">
+                            <a href="giris.html" type="submit" style="margin-right: 5px;"><i class="fa-solid fa-right-to-bracket"></i> Giriş</a>
+                            <a href="kayit.html" type="submit"><i class="fa-solid fa-user-plus"></i> Kayıt</a>
+                        </div>
+                        <div class="d-flex" id="header_sag">
+
+                        </div>
+                        <a id="logout_btn" style="display:none" onclick="logOut()"><i class="fa-solid fa-circle-xmark"></i> Çıkış</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section class="yolharitasisayfasi">
+        <div class="container">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr class="harita">
+                                <th></th>
+                                <th>ADIM 1. Erasmus+ Hareketliliği Başvurusu</th>
+                                <th></th>
+                            </tr>
+                            <tr class="harita">
+                                <td>1</td>
+                                <td>Dış İlişkiler Ofisinin web sitesine girerek daha önceden belirtilmiş tarihler arasında Erasmus Dil sınavına başvuru yapılacaktır. Bu başvuru aynı zamanda Erasmus başvurusu olarak kabul edilecektir.</td>
+                                <td>Erasmus Dil Sınavı Başvurusu</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>2</td>
+                                <td>Erasmus sınavı sonrasında açıklanan yerleştirmelerden sonra öğrenci ister feragat edip yeniden yerleştirilme talebinde bulunabilir ya da hakkından tamamen vazgeçebilir.</td>
+                                <td>Yerleştirme Sonuçları ve Feragat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr class="harita">
+                                <th></th>
+                                <th>ADIM 2. Erasmus+ Hareketliliği Hazırlık Aşaması</th>
+                                <th></th>
+                            </tr>
+                            <tr class="harita">
+                                <td>1</td>
+                                <td>Öğrenci not döküm belgesini İngilizce olarak Öğrenci İşlerinden alır. Aslı öğrencide kalır, fotokopisi Erasmus Ofisine bırakılır.</td>
+                                <td>Transkript ( Not Dökümü)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>2</td>
+                                <td>Erasmus Ofisi hazırlar. Öğrenciye okutularak imzalatılır.<br /> Ulusal Ajans’tan gelen Beyanname öğrenciye teslim edilir.</td>
+                                <td>Öğrenci Beyannamesi İndir<a href="http://oia.atauni.edu.tr/wp-content/uploads/yuklemeler/evraklar/erasmus/ogrenim/erasmus_ogrenci_beyannamesi.doc"></a></td>
+                            </tr>
+                            <tr class="harita">
+                                <td>3</td>
+                                <td>Gidilecek Üniversite için öğrenci başvuru formudur.<br /> Aday Gösterme işlemi tamamlandıktan sonra gidilecek kurumdan nasıl hazırlanacağı ile ilgili bilgilendirme yapıldıktan sonra Öğrenci ve Erasmus Bölüm Koordinatörü ile birlikte hazırlanır. Her kurumun application formu olmayabilir. Bu durumda sayfamızda yer alan formu kullanmanız gerekmektedir. <strong>NOT: </strong><u>Eğitim almaya hak kazandığınız üniversiteden ilgili formu temin edemediğiniz takdirde</u> bu formu kullanabilirsiniz.</td>
+                                <td>Student Application Form ( Öğrenci Başvuru Formu)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>4</td>
+                                <td>Öğrenci hazırlar. Bu formla ilgili bilgiler öğrenci başvuru formu ile öğrenciye gelir ya da gidilecek Üniversitenin Web sayfasında bulunabilir. Öğrencinin kalacağı yerin önceden ayarlanması içindir. Avans ödemesi gerekebilir. Yurdu olmayan okullar için bu evrakı doldurmak gerekmeyebilir.</td>
+                                <td>Accomodation Form ( Barınma Başvuru Formu)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>5</td>
+                                <td>Öğrenci, Bölüm Koordinatörü ve öğrenci danışmanı birlikte hazırlar. Gidilecek Üniversitenin programı incelenerek, Minimum 30 ECTS ders seçilir. Her iki kurumca onaylanır.</td>
+                                <td>Learning Agreement ( Öğrenim Anlaşması) İndir</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>6</td>
+                                <td>Öğrenci, Erasmus Bölüm Koordinatörü ve Danışmanı ile birlikte gideceği kurumdan seçtiği derslerin burada yerine sayılacağı dersleri gösteren bir form hazırlanır. (Web Sitesinden taslağını alır.) Üç nüsha halinde hazırlanan bu form Erasmus Bölüm Koordinatörü ve Danışmanı tarafından imzalanır bölüm akademik kuruluna sunulur. Kurulun onayından sonra bir nüshası ofise getirilir.</td>
+                                <td>Ders Eş Değerlilik Formu</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>7</td>
+                                <td>Gidilecek üniversite hazırlar, öğrenciye gönderir. Vize için gerekli belgeler arasındadır. Öğrenci bir kopyasını Dış İlişkiler Ofisine getirmelidir.<br /> Bölüm Erasmus Koordinatörlerine de bir kopyasını bırakmaları önerilir.</td>
+                                <td>Acceptance Letter ( Kabul Mektubu)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>8</td>
+                                <td>Öğrenci gideceği ülkenin vizesi için gerekli sigorta türünü gidiş ve dönüş tarihlerini kapsayacak şekilde seyahat sigortası yaptırır. Vize başvurusu için bir kopya, ofis için bir kopya ve öğrenci için bir kopya olarak hazırlanmalıdır. Her ülkenin sigorta uygulaması farklı olduğundan öğrencilerin kesin bilgiyi vize başvurusu yapacakları kurumdan almaları gerekmektedir.</td>
+                                <td>Seyahat Sağlık Sigortası</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>9</td>
+                                <td>Öğrenci bankadan Euro hesabı açtırmalı cüzdan fotokopisini hibe sözleşmesinin hazırlanması için ofise bırakmalıdır.</td>
+                                <td>Banka Hesabı</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>10</td>
+                                <td>Erasmus Ofisi hazırlar. Öğrenciye sağlanan mali desteğin miktarını ve kaynaklarını bildirir. Bu belge öğrencinin kabul mektubu geldikten sonra vizeye başvurmadan 1-2 hafta önce hazırlanır.</td>
+                                <td>Financial Support Document ( Mali Destek Belgesi)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>11</td>
+                                <td>Öğrenci fakülte öğrenci işlerine Erasmus Hareketliliğine gideceği için ‘Harçsız Pasaport’ almak istediğine dair dilekçe ile müracaat eder.</td>
+                                <td>Pasaport</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>12</td>
+                                <td>Gidilecek ülke konsolosluğundan alınan formlar doldurulur ve istenen belgelerle birlikte başvuru yapılır. Başvuruyu öğrenci kendi yapar.</td>
+                                <td>Vize</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>13</td>
+                                <td>Ofis tarafından hazırlanır. Erasmus programı çerçevesinde tarafların uyması gereken kuralları bildiren ve alınacak hibe tutarı için Erasmus Kurumsal Koordinatörü tarafından imzalanacak belgedir. Bu belge öğrenci vizesini gönderdikten sonra hazırlanır.</td>
+                                <td>Hibe Sözleşmesi</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>14</td>
+                                <td>Öğrencilerin hareketliliğe katılmadan önce Erasmus Ofisinin yönlendireceği sisteme giriş yapması ve verilen dil testini yapması gerekmektedir. Test sonucu gidip gitmemeyi etkilemez. Ancak testi çözmeyen öğrenciye ödeme yapılamaz. Öğrenciler sisteme kayıt olurken hareketlilik tarihlerini kabul mektuplarına uygun olarak yazmaları gerekir.</td>
+                                <td>Online Dil Desteği (OLS)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>15</td>
+                                <td>Tüm bu adımlar tamamlandıktan sonra, gitmeden önce &#8220;Öğrenim Check List&#8221; doldurup Erasmus+ Ofisine teslim edilmesi gerekmektedir.</td>
+                                <td>Öğrenim Check List</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr class="harita">
+                                <th></th>
+                                <th>ADIM 3. Erasmus+ Öğrenciliği Sürecinde</th>
+                                <th></th>
+                            </tr>
+                            <tr class="harita">
+                                <td>1</td>
+                                <td>2.ADIM&#8217;daki &#8220;Öğrenim Checklist&#8221; belgesini eksiksiz doldurup Erasmus+ Ofisine teslim eden öğrencilere hibelerinin %80&#8217;lik kısmı yatırılır.</td>
+                                <td>Ödeme Talimatı</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>2</td>
+                                <td>Öğrencinin, gitmeden önce seçtiği dersleri gittiğinde alamama durumu söz konusu ise bir ay içerisinde Erasmus Koordinatörüne email yoluyla danışarak yeni bir Changes to/modification of Learning Agreement hazırlaması ve ivedilikle Erasmus Ofisine ulaştırması gerekmektedir. LA imzalanması için gerekli resmi süreci Dış İlişkiler Ofisi takip eder.</td>
+                                <td>Changes to LA ( Ders Değişikliği)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>3</td>
+                                <td>Yapılan Değişikliği Dış İlişkiler Ofisi resmi yazı ile ilgili fakülteye bildirir ve yeni Eş Değerlilik Belgesinin hazırlanmasıni ister.</td>
+                                <td>Eş Değerlilik Değişimi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr class="harita">
+                                <th></th>
+                                <th>ADIM 4. Erasmus+ Hareketliliği Dönüşü</th>
+                                <th></th>
+                            </tr>
+                            <tr class="harita">
+                                <td>1</td>
+                                <td>Gidilen Üniversitenin Erasmus Koordinatörü tarafından Akademik Takvimin başladığı ve bittiği tarihlerde imzalanır. Öğrenci döndüğünde bu belgeyi Erasmus Ofisine teslim etmek zorundadır.</td>
+                                <td>Confirmation of Mobility (Hareketliliğin Teyidi) İndir</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>2</td>
+                                <td>Misafir olunan Üniversite hazırlar. Öğrencinin aldığı derslerdeki performansını ve aldığı ECTS kredilerini gösterir.<br /> İngilizce olmalıdır.</td>
+                                <td>Transcript of Records (Not Döküm Belgesi)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>3</td>
+                                <td>Öğrenci hareketliği bitince otomatik olarak kendisine gönderilen ikinci dil sınavını yapar.</td>
+                                <td>Son Online Dil Desteği (OLS)</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>4</td>
+                                <td>Öğrenci döndüğünde pasaportunda Giriş/Çıkışının olduğu sayfaların fotokopisini Dış İlişkiler Ofisine teslim eder.</td>
+                                <td>Pasaport Giriş/çıkış</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>5</td>
+                                <td>Öğrenci döndükten sonra Erasmus+ Ofisinin yönlendireceği web sitesine giriş yapar ve nihai raporu tamamlar. Rapor girişi tamamlanmadan öğrenciye nihai ödeme yapılmaz.</td>
+                                <td>Nihai Rapor</td>
+                            </tr>
+                            <tr class="harita">
+                                <td>6</td>
+                                <td>Öğrencinin Erasmus Ofisi’ne, transcript, confirmation of mobility, pasaport giriş çıkış sayfaları yada uçak biniş kartlarını teslim etmesi, online rapor girişini ve dil sınavını tamamlamasından sonra ofis tarafından yapılır.</td>
+                                <td>Son Ödeme</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footerMain">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <a href="index.html"><img src="images/logo_footer.png" class="img-fluid" /></a>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-location-dot"></i> Cibali Mah. Kadir Has Cad. 34083 Fatih / İSTANBUL
+                    </div>
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-at"></i> ar-ge@khas.edu.tr
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-phone"></i> +90 (212) 533 65 32
+                    </div>
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-fax"></i> +90 212 631 91 50
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://twitter.com/khas_arge" target="_blank" class="socialLink"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="http://linkedin.com/in/khas-ar-ge-404a98172" target="_blank" class="socialLink"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Khasedutr" target="_blank" class="socialLink"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/khasedutr/" target="_blank" class="socialLink"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/user/KadirHasUniversitesi" target="_blank" class="socialLink"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link" target="_blank" class="socialLink"><i class="fa-brands fa-spotify"></i></a>
+                    <div class="temizle"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyrightText">
+                        © 2023 - Sezgi Ersoy
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script>
+
+        checkLogin();
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

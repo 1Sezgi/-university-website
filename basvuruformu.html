@@ -1,0 +1,606 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>Şimdi Başvur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/session.js"></script>
+
+    <script>
+
+        checkLogin();
+        var isLogin = sessionStorage.getItem("isLogin");
+
+        if (isLogin == "false") {
+
+            window.location.href = "giris.html";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top navbarClass">
+            <div class="container-fluid">
+                <a href="index.html">
+                    <img class="siteLogo" src="images/khaslogo.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="yolharitasi.html">Erasmus Yol Haritası</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="basvuruformu.html">Şimdi Başvur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iletisim.html ">İletişim</a>
+                        </li>
+
+                    </ul>
+                    <div class="girisKayitCikis d-flex">
+                        <div class="d-flex" id="btndiv">
+                            <a href="giris.html" type="submit" style="margin-right: 5px;"><i class="fa-solid fa-right-to-bracket"></i> Giriş</a>
+                            <a href="kayit.html" type="submit"><i class="fa-solid fa-user-plus"></i> Kayıt</a>
+                        </div>
+                        <div class="d-flex" id="header_sag">
+
+                        </div>
+                        <a id="logout_btn" style="display:none" onclick="logOut()"><i class="fa-solid fa-circle-xmark"></i> Çıkış</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!---->
+
+    <section class="basvurusayfasi">
+        <div class="container kenar">
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Erasmus Başvuru Formu / Erasmus Application Form</h1>
+                    </div>
+                    <div class="col-lg-12">
+                        <h3 class="baslik">Kişisel Bilgiler / Personal Information:</h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="fname">Adınız / Name :</label>
+                        <input type="text" class="form-control" id="fname" placeholder="Adınız" required />
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="lname">Soyadınız / Surname:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Soyadınız" required />
+                    </div>
+                    <div class="col-lg-4" style="font-family:monaco">
+                        <p>Cinsiyet /Gender :</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender" value="option1" required>
+                            <label class="form-check-label" for="gender">Kadın</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender2" value="option2" required>
+                            <label class="form-check-label" for="gender2">Erkek</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="regender" value="option3" required>
+                            <label class="form-check-label" for="regender">Belirtmek İstemiyorum.</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="bday"> Doğum tarihiniz / Date of birth : </label>
+                        <input type="date" class="form-control" name="bday" id="bday" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="phone">  Telefon numaranızı girin / Phone number: </label>
+                        <input type="number" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="col-lg-4" style="font-family:monaco">
+                        <p> Engel Durumu / Disability situation: </p>
+                        <div class="engelDurumuSol">
+                            <input class="form-check-input" type="radio" name="engel" id="noengel" value="option1" onclick="acKapat()" required>
+                            <label class="form-check-label" for="noengel">Yok</label>
+                            <input class="form-check-input" type="radio" name="engel" id="engel" value="option2" onclick="acKapat()" required>
+                            <label class="form-check-label" for="engel">Var</label>
+                        </div>
+                        <div class="engelDurumuSag">
+                            <label for="exampleFormControlTextarea1"></label>
+                            <textarea id="exampleFormControlTextarea1" class="form-control" rows="3" placeholder="Var ise açıklaması" style="display:none"></textarea>
+                        </div>
+                        <div class="temizle"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 baslik">
+                        <h3> Milliyet Bilgileri / Nationality information: </h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer01"> Milliyet Adı / Nationality name : </label>
+                        <input type="text" class="form-control" id="validationServer01" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer01"> Varsa İkinci Milliyet / Second nationality (optional) : </label>
+                        <input type="text" class="form-control" id="validationServer01">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer02"> Ülke Adı / Country : </label>
+                        <select type="text" class="form-control" id="validationServer02" required>
+                            <option value="">Seçiniz</option>
+                            <option value="United States">United States</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="American Samoa">American Samoa</option>
+                            <option value="Andorra">Andorra</option>
+                            <option value="Angola">Angola</option>
+                            <option value="Anguilla">Anguilla</option>
+                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Armenia">Armenia</option>
+                            <option value="Aruba">Aruba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Azerbaijan">Azerbaijan</option>
+                            <option value="The Bahamas">The Bahamas</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Barbados">Barbados</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Belize">Belize</option>
+                            <option value="Benin">Benin</option>
+                            <option value="Bermuda">Bermuda</option>
+                            <option value="Bhutan">Bhutan</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                            <option value="Botswana">Botswana</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Brunei">Brunei</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                            <option value="Burundi">Burundi</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Cameroon">Cameroon</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Cape Verde">Cape Verde</option>
+                            <option value="Cayman Islands">Cayman Islands</option>
+                            <option value="Central African Republic">Central African Republic</option>
+                            <option value="Chad">Chad</option>
+                            <option value="Chile">Chile</option>
+                            <option value="China">China</option>
+                            <option value="Christmas Island">Christmas Island</option>
+                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Comoros">Comoros</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Cook Islands">Cook Islands</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Curaçao">Curaçao</option>
+                            <option value="Cyprus">Cyprus</option>
+                            <option value="Czech Republic">Czech Republic</option>
+                            <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Djibouti">Djibouti</option>
+                            <option value="Dominica">Dominica</option>
+                            <option value="Dominican Republic">Dominican Republic</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="El Salvador">El Salvador</option>
+                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                            <option value="Eritrea">Eritrea</option>
+                            <option value="Estonia">Estonia</option>
+                            <option value="Ethiopia">Ethiopia</option>
+                            <option value="Falkland Islands">Falkland Islands</option>
+                            <option value="Faroe Islands">Faroe Islands</option>
+                            <option value="Fiji">Fiji</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="French Polynesia">French Polynesia</option>
+                            <option value="Gabon">Gabon</option>
+                            <option value="The Gambia">The Gambia</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Gibraltar">Gibraltar</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Greenland">Greenland</option>
+                            <option value="Grenada">Grenada</option>
+                            <option value="Guadeloupe">Guadeloupe</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Guatemala">Guatemala</option>
+                            <option value="Guernsey">Guernsey</option>
+                            <option value="Guinea">Guinea</option>
+                            <option value="Guinea-Bissau">Guinea-Bissau</option>
+                            <option value="Guyana">Guyana</option>
+                            <option value="Haiti">Haiti</option>
+                            <option value="Honduras">Honduras</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Iran">Iran</option>
+                            <option value="Iraq">Iraq</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Jamaica">Jamaica</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Jersey">Jersey</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Kazakhstan">Kazakhstan</option>
+                            <option value="Kenya">Kenya</option>
+                            <option value="Kiribati">Kiribati</option>
+                            <option value="North Korea">North Korea</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Kosovo">Kosovo</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                            <option value="Laos">Laos</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lebanon">Lebanon</option>
+                            <option value="Lesotho">Lesotho</option>
+                            <option value="Liberia">Liberia</option>
+                            <option value="Libya">Libya</option>
+                            <option value="Liechtenstein">Liechtenstein</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Luxembourg">Luxembourg</option>
+                            <option value="Macau">Macau</option>
+                            <option value="Macedonia">Macedonia</option>
+                            <option value="Madagascar">Madagascar</option>
+                            <option value="Malawi">Malawi</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="Mali">Mali</option>
+                            <option value="Malta">Malta</option>
+                            <option value="Marshall Islands">Marshall Islands</option>
+                            <option value="Martinique">Martinique</option>
+                            <option value="Mauritania">Mauritania</option>
+                            <option value="Mauritius">Mauritius</option>
+                            <option value="Mayotte">Mayotte</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Micronesia">Micronesia</option>
+                            <option value="Moldova">Moldova</option>
+                            <option value="Monaco">Monaco</option>
+                            <option value="Mongolia">Mongolia</option>
+                            <option value="Montenegro">Montenegro</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Mozambique">Mozambique</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Nagorno-Karabakh">Nagorno-Karabakh</option>
+                            <option value="Namibia">Namibia</option>
+                            <option value="Nauru">Nauru</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                            <option value="New Caledonia">New Caledonia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nicaragua">Nicaragua</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Niue">Niue</option>
+                            <option value="Norfolk Island">Norfolk Island</option>
+                            <option value="Turkish Republic of Northern Cyprus">Turkish Republic of Northern Cyprus</option>
+                            <option value="Northern Mariana">Northern Mariana</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Oman">Oman</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Palau">Palau</option>
+                            <option value="Palestine">Palestine</option>
+                            <option value="Panama">Panama</option>
+                            <option value="Papua New Guinea">Papua New Guinea</option>
+                            <option value="Paraguay">Paraguay</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Pitcairn Islands">Pitcairn Islands</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Republic of the Congo">Republic of the Congo</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Barthelemy">Saint Barthelemy</option>
+                            <option value="Saint Helena">Saint Helena</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Martin">Saint Martin</option>
+                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                            <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Seychelles">Seychelles</option>
+                            <option value="Sierra Leone">Sierra Leone</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Solomon Islands">Solomon Islands</option>
+                            <option value="Somalia">Somalia</option>
+                            <option value="Somaliland">Somaliland</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Ossetia">South Ossetia</option>
+                            <option value="South Sudan">South Sudan</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Sudan">Sudan</option>
+                            <option value="Suriname">Suriname</option>
+                            <option value="Svalbard">Svalbard</option>
+                            <option value="eSwatini">eSwatini</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Syria">Syria</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Tajikistan">Tajikistan</option>
+                            <option value="Tanzania">Tanzania</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Timor-Leste">Timor-Leste</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Tokelau">Tokelau</option>
+                            <option value="Tonga">Tonga</option>
+                            <option value="Transnistria Pridnestrovie">Transnistria Pridnestrovie</option>
+                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                            <option value="Tristan da Cunha">Tristan da Cunha</option>
+                            <option value="Tunisia">Tunisia</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Turkmenistan">Turkmenistan</option>
+                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                            <option value="Tuvalu">Tuvalu</option>
+                            <option value="Uganda">Uganda</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Arab Emirates">United Arab Emirates</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Uzbekistan">Uzbekistan</option>
+                            <option value="Vanuatu">Vanuatu</option>
+                            <option value="Vatican City">Vatican City</option>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="British Virgin Islands">British Virgin Islands</option>
+                            <option value="Isle of Man">Isle of Man</option>
+                            <option value="US Virgin Islands">US Virgin Islands</option>
+                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                            <option value="Western Sahara">Western Sahara</option>
+                            <option value="Yemen">Yemen</option>
+                            <option value="Zambia">Zambia</option>
+                            <option value="Zimbabwe">Zimbabwe</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer02"> Pasaport No / Passport number:</label>
+                        <input type="text" class="form-control" id="validationServer02">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer02"> TC Kimlik No / TC Identification Number : </label>
+                        <input type="text" class="form-control" id="validationServer02" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 baslik">
+                        <h3> Adres Bilgileri / Address : </h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04"> İl / Province :</label>
+                        <input type="text" class="form-control" id="validationServer04" placeholder="İl" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04"> İlçe / District : </label>
+                        <input type="text" class="form-control" id="validationServer04" placeholder="İlçe" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04">  Mahalle / Neighbourhood : </label>
+                        <input type="text" class="form-control" id="validationServer04" placeholder="Mahalle" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04">  Sokak / Street :  </label>
+                        <input type="text" class="form-control" id="validationServer04" placeholder="Sokak" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04"> Apartman No. / Apartment number : </label>
+                        <input type="text" class="form-control" id="validationServer04" placeholder="Apartman No" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04"> Posta Kodu / Post Code :  </label>
+                        <input type="text" class="form-control" id="validationServer04" placeholder="Posta Kodu" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 baslik">
+                        <h3> Eğitim Bilgileri / Education information : </h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04">
+                            Üniversite / University :
+                        </label>
+                        <input type="text" class="form-control" id="validationServer04" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04">
+                            Bölüm / Section:
+                        </label>
+                        <input type="text" class="form-control" id="validationServer04" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04">
+                            Fakülte / Faculty :
+                        </label>
+                        <input type="text" class="form-control" id="validationServer04" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer02">
+                            Mezuniyet Tarihiniz / Date Of Graduation:
+                        </label>
+                        <input type="date" class="form-control" name="mday" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="phone">Not Ortalamanızı giriniz / Grade Average:</label>
+                        <input min="2.20" type="number" class="form-control" id="not_ort" name="not_ort" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationServer04"> Mezuniyet Durumu / Graduation Status: </label><br />
+
+                        <div class="mt-2">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+                            <label class="form-check-label" for="inlineRadio1">Mezun / Graduate </label>
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+                            <label class="form-check-label" for="inlineRadio2"> Öğrenci / Student </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 baslik">
+                        <h3>
+                            Gerekli Dökümanlar /Necessary Documents :
+                        </h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleFormControlFile1">İngilizce Yeterlilik Belgesi / English Proficiency Certificate :</label><br />
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleFormControlFile1">
+                            CV / Resume :
+                        </label> <br />
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleFormControlFile1">
+                            Niyet Mektubu / Letter Of Intent :
+                        </label><br />
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleFormControlFile1">
+                            Pasaport / Passport :
+                        </label><br />
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleFormControlFile1">
+                            İkametgah / Place Of Residence :
+                        </label> <br />
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="exampleFormControlFile1">Diploma :</label><br />
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-6 baslik">
+                        <button class="btn btn-success" type="submit">Başvuruyu tamamla</button>
+                        <button class="btn btn-danger" type="reset" value="temizle">Sıfırla</button>
+                    </div>                                                     
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+
+
+    <section class="footerMain">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <a href="index.html"><img src="images/logo_footer.png" class="img-fluid" /></a>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-location-dot"></i> Cibali Mah. Kadir Has Cad. 34083 Fatih / İSTANBUL
+                    </div>
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-at"></i> ar-ge@khas.edu.tr
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-phone"></i> +90 (212) 533 65 32
+                    </div>
+                    <div class="footerIletisimBlock">
+                        <i class="fa-solid fa-fax"></i> +90 212 631 91 50
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <a href="https://twitter.com/khas_arge" target="_blank" class="socialLink"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="http://linkedin.com/in/khas-ar-ge-404a98172" target="_blank" class="socialLink"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Khasedutr" target="_blank" class="socialLink"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/khasedutr/" target="_blank" class="socialLink"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/user/KadirHasUniversitesi" target="_blank" class="socialLink"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link" target="_blank" class="socialLink"><i class="fa-brands fa-spotify"></i></a>
+                    <div class="temizle"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyrightText">
+                        © 2023 - Sezgi Ersoy
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+
+        (() => {
+            'use strict'
+
+            const forms = document.querySelectorAll('.needs-validation')
+
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+    <script>
+
+        checkLogin();
+
+    </script>
+
+
+
+
+
+</body>
+</html>
